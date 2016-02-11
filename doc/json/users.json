@@ -1,0 +1,81 @@
+{
+  "id": "userJohnFooBar1234id",
+  "name": "John Doe",
+  "email": "john.doe@kth.se",
+  "type": "player",
+  "challenges": {
+    "active": [
+      {
+        "id": "challengeFooBar1235id",
+        "title": "Salmon please",
+        "description": "Could you get me a piece of salmon?",
+        "state": "locked",
+        "ownerId": "userAliceFooBar1235id",
+        "category": {
+          "id": "categoryFooBar1234id",
+          "name": "Shopping",
+          "reward": 5
+        }
+      }
+    ],
+    "completed": [
+      {
+        "id": "challengeFooBar1234id",
+        "title": "Shopping Täby",
+        "description": "I need some potatoes and milk.",
+        "state": "completed",
+        "ownerId": "userAliceFooBar1235id",
+        "category": {
+          "id": "categoryFooBar1234id",
+          "name": "Shopping",
+          "reward": 5
+        }
+      }
+    ],
+    "published": []
+  },
+  "awards": [
+    {
+      "id": "awardFooBar1234id",
+      "name": "Shopping Hero",
+      "description": "You have helped 5 people with their shopping."
+    }
+  ]
+},
+{
+  "id": "userAliceFooBar1235id",
+  "name": "Alice Wonderland",
+  "email": "alice.is.tripping@kth.se",
+  "type": "elder",
+  "challenges": {
+    "active": [],
+    "completed": [],
+    "published": [
+      {
+        "id": "challengeFooBar1234id",
+        "title": "Shopping Täby",
+        "description": "I need some potatoes and milk.",
+        "state": "completed",
+        "ownerId": "userAliceFooBar1235id",
+        "category": {
+          "id": "categoryFooBar1234id",
+          "name": "Shopping",
+          "reward": 5
+        }
+      },
+      {
+        "id": "challengeFooBar1235id",
+        "title": "Salmon please",
+        "description": "Could you get me a piece of salmon?",
+        "state": "locked",
+        "ownerId": "userAliceFooBar1235id",
+        "category": {
+          "id": "categoryFooBar1234id",
+          "name": "Shopping",
+          "reward": 5
+        }
+      }
+    ]
+  },
+  "awards": []
+}
