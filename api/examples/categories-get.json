@@ -1,0 +1,27 @@
+[
+  {
+    "id": "idCategoryShopping1234",
+    "name": "Shopping",
+    "reward": 5
+  },
+  {
+    "id": "idCategoryShopping1234",
+    "name": "Chores",
+    "reward": 5
+  },
+  {
+    "id": "idCategoryShopping1234",
+    "name": "Walk the pet",
+    "reward": 5
+  },
+  {
+    "id": "idCategoryShopping1234",
+    "name": "Company",
+    "reward": 5
+  },
+  {
+    "id": "idCategoryShopping1234",
+    "name": "Others",
+    "reward": 5
+  }
+]

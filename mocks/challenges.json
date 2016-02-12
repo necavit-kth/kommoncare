@@ -17,6 +17,7 @@
     "description": "Could you get me a piece of salmon?",
     "state": "locked",
     "ownerId": "userAliceFooBar1235id",
+    "playerId": "userJohnFooBar1234id",
     "category": {
       "id": "categoryFooBar1234id",
       "name": "Shopping",
