@@ -1,0 +1,37 @@
+#%RAML 1.0
+title: Kommoncare
+version: 1.0.0
+baseUri: http://kommoncare.com/api
+types:
+  ChallengeAction:
+    type:
+      - string
+    displayName: Challenge Action
+    enum:
+      - lock
+      - complete
+
+/users:
+  displayName: Users
+  description: The collection of Kommoncare users.
+  get:
+  post:
+  /{userId}:
+    get:
+/challenges:
+  get:
+  post:
+  /{challengeId}:
+    get:
+    post:
+      queryParameters:
+        action:
+          description: An identifier of a Zocial user, used to retrieve only his/her posts.
+          type: string
+          required: false
+/categories:
+  get:
+  /{categoryId}:
+    get:
+/awards:
+  get:

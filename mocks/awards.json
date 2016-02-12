@@ -1,0 +1,8 @@
+[
+  {
+    "id": "awardFooBar1234id",
+    "name": "Shopping Hero",
+    "description": "You have helped 5 people with their shopping.",
+    "isApplicable": "var count = 0; for (var i = 0; i < challenges.length; i++) {if (challenges[i].category.name === \"Shopping\") count++;} if (count >= 5) return true; return false;"
+  }
+]

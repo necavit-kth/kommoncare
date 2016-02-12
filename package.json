@@ -1,0 +1,26 @@
+{
+  "name": "kommoncare",
+  "version": "1.0.0",
+  "description": "Kommoncare is a [MEAN](https://en.wikipedia.org/wiki/MEAN_%28software_bundle%29) web platform to outsource elder care services and re-engage the communities in taking care of their elders.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/necavit/kommoncare.git"
+  },
+  "keywords": [],
+  "author": "necavit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/necavit/kommoncare/issues"
+  },
+  "homepage": "https://github.com/necavit/kommoncare",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.3"
+  }
+}
