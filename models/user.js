@@ -14,7 +14,7 @@ var userSchema = new Schema({
   },
   phoneNumber: String,
   hasPets: Boolean,
-  alergies: [String],
+  allergies: [String],
   challenges: {
     completed: [],
     active: [],
