@@ -2,11 +2,37 @@
 
 var users = require('../mocks/users.json'); // MOCK!!
 
+// grab the user model
+var User = require('../models/user');
+
 module.exports = {
+
+  //POST /users
+  createUser: function(req, res, next) {
+    console.log(req.body);
+
+    // create a new user
+    var newUser = User(req.body);
+
+    // save the user
+    newUser.save(function(err) {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+      res.send("<h1>User created!!</h1>");
+    });
+  },
 
   // GET /users
   getUsers: function(req, res, next) {
-    res.json(users);
+    User.find({}, function(err, users) {
+      if (err) throw err;
+
+      // object of all the users
+      console.log(users);
+      res.json(users);
+    });
   },
 
   // GET /users/:id

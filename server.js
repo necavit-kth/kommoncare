@@ -3,6 +3,16 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var path = require('path');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://necavit:kommon1692@ds055875.mongolab.com:55875/kommoncaredb');
+//mongoose.connect('mongodb://localhost/kommoncare');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('YAAAY');
+});
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST

@@ -7,7 +7,7 @@ module.exports = function () {
 
   router.get('/users', usersController.getUsers);
   router.get('/users/:id', usersController.getUser);
-  //TODO router.post('/users', itemsController.saveUser);
+  router.post('/users', usersController.createUser);
 
   router.get('/challenges', challengesController.getChallenges);
   router.get('/challenges/:id', challengesController.getChallenge);
