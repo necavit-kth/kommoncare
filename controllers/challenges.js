@@ -1,27 +1,72 @@
-//TODO var User = require('../models/callenge');
-
-var challenges = require('../mocks/challenges.json'); // MOCK!!
+var Challenge = require('../models/challenge');
+var Category = require('../models/category');
 
 module.exports = {
 
-  // GET /challenges
-  getChallenges: function(req, res, next) {
-    res.json(challenges);
+  //POST /challenges
+  createChallenge: function(req, res, next) {
+    var data = req.body;
+
+    Category.findById(data.categoryId, function(err, category) {
+      if (err) throw err;
+
+      var newChallenge = Challenge({
+        description: data.description,
+        category: category,
+        ownerId: data.ownerId
+      });
+
+      newChallenge.save(function(err) {
+        if (err) throw err;
+        res.send('Challenge: ' + data.description + ' has been created!');
+      });
+    });
   },
 
-  // GET /users/:id
+  // GET /challenges
+  getChallenges: function(req, res, next) {
+    Challenge.find({},function (err, challenges) {
+      if (err) throw err;
+      res.status(200).json(challenges);
+    });
+  },
+
+  // GET /challenges/:id
   getChallenge: function(req, res, next) {
-    var id = req.params.id;
-
-    for (var i = 0; i < challenges.length; i++) {
-      if (challenges[i].id === id) {
-        res.json(challenges[i]);
-        return; //important! otherwise, the flow continues!
-      }
-    }
-
-    // not found:
-    res.status(404).send('Ooops! No challenge with id: ' + id);
+    Challenge.findById(req.params.id,function (err, challenge) {
+      if (err) throw err;
+      res.status(200).json(challenge);
+    });
   }
 
 };
+
+/*
+//POST /users
+createUser: function(req, res, next) {
+  // create a new user
+  var newUser = User(req.body);
+
+  // save the user
+  newUser.save(function(err) {
+    if (err) throw err;
+    res.send('User: ' + req.body.name + ' has been created!');
+  });
+},
+
+// GET /users
+getUsers: function(req, res, next) {
+  User.find({}, function(err, users) {
+    if (err) throw err;
+    res.status(200).json(users);
+  });
+},
+
+// GET /users/:id
+getUser: function(req, res, next) {
+  User.findById(req.params.id, function(err, user) {
+    if (err) throw err;
+    res.status(200).json(user);
+  });
+},
+*/

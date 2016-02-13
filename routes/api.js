@@ -17,7 +17,10 @@ module.exports = function () {
   router.delete('/categories/:id', categoriesController.deleteCategory);
 
   router.get('/challenges', challengesController.getChallenges);
+  router.post('/challenges', challengesController.createChallenge);
   router.get('/challenges/:id', challengesController.getChallenge);
+  // router.delete('/challenges/:id', challengesController.deleteChallenge);
+  // router.post('/challenges/action/:action', challengesController.applyActionToChallenge);
 
   return router;
 };

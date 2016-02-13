@@ -34,7 +34,7 @@ var apiRouter = require('./routes/api');
 app.use('/api', apiRouter());
 
 // Angular app main file
-app.get('/', function(req, res, next){
+app.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/views/app.html'));
 });
 
