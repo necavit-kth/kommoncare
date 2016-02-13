@@ -7,6 +7,7 @@ var challengeSchema = new Schema({
   description: String,
   category: Category.schema,
   ownerId: String,
+  lockerId:String,
   state: String
 });
 

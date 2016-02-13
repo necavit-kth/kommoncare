@@ -20,7 +20,7 @@ module.exports = function () {
   router.post('/challenges', challengesController.createChallenge);
   router.get('/challenges/:id', challengesController.getChallenge);
   router.delete('/challenges/:id', challengesController.deleteChallenge);
-  // router.post('/challenges/action/:action', challengesController.applyActionToChallenge);
+  router.post('/challenges/:id/action/:action', challengesController.applyActionToChallenge);
 
   return router;
 };
