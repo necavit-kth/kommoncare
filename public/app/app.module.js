@@ -1,42 +1,4 @@
-var loggedInUser = {  
-		      "_id":"56be5ae3f3289a31645ef276",
-		      "name":"John Mon Calamari",
-		      "type":"player",
-		      "phoneNumber":"0729003605",
-		      "hasPets":true,
-		      "allergies":[  
-		         "squids",
-		         "octopus",
-		         "oysters",
-		         "calamares"
-		      ],
-		      "__v":0,
-		      "awards":[  
-
-		      ],
-		      "challenges":{  
-		         "published":[  
-
-		         ],
-		         "active":[  
-
-		         ],
-		         "completed":[  
-
-		         ]
-		      },
-		      "location":{  
-		         "address":"Valhallavägen 21",
-		         "geojson":{  
-		            "type":"Point",
-		            "coordinates":[  
-		               -105.01621,
-		               39.57422
-		            ]
-		         }
-		      }
-			}
-
+var loggedInUser;
 
 
 angular.module('app',[
@@ -53,8 +15,9 @@ angular.module('app',[
 	'app.footerModule'
 	])
 .controller('mainController', function($scope, $http) {
-		 $http.get("http://kommoncare.davidmr.es/api/users")
+		id = "56be644c2c73f39864399e60";
+		$http.get("http://kommoncare.davidmr.es/api/users/" +id)
 	    .then(function(response) {
-	       alert(response);
+	    	loggedInUser = response;
 	    });
 	});
