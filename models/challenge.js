@@ -17,7 +17,11 @@ var challengeSchema = new Schema({
     }
   },
   startDate: Date,
-  endDate: Date
+  endDate: Date,
+  data: [{
+    name: String,
+    quantity: String
+  }]
 }, { typeKey: '$type' });
 
 // the schema is useless so far
