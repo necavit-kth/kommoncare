@@ -1,5 +1,6 @@
 var Challenge = require('../models/challenge');
 var Category = require('../models/category');
+var User = require('../models/category');
 
 module.exports = {
 
@@ -9,16 +10,22 @@ module.exports = {
 
     Category.findById(data.categoryId, function(err, category) {
       if (err) throw err;
-
-      var newChallenge = Challenge({
-        description: data.description,
-        category: category,
-        ownerId: data.ownerId
-      });
-
-      newChallenge.save(function(err) {
+      User.findById(data.ownerId, function(err, owner) {
         if (err) throw err;
-        res.send('Challenge: ' + data.description + ' has been created!');
+        var newChallenge = Challenge({
+          description: data.description,
+          category: category,
+          ownerId: data.ownerId,
+          state: "open"
+        });
+        owner.challenges.published.push(newChallenge);
+        owner.save(function(err){
+          if (err) throw err;
+          newChallenge.save(function(err) {
+            if (err) throw err;
+            res.send('Challenge: ' + data.description + ' has been created!');
+          });
+        });
       });
     });
   },
@@ -37,7 +44,20 @@ module.exports = {
       if (err) throw err;
       res.status(200).json(challenge);
     });
+  },
+
+  // DELETE /challenges/:id
+  deleteChallenge: function(req, res, next) {
+    Challenge.findByIdAndRemove(req.params.id, function(err) {
+      if (err) throw err;
+      res.sendStatus(204);
+    });
   }
+
+  //POST /challenges/:id/action/{lock|complete}
+  // applyActionToChallenge: function(req, res, next) {
+  //
+  // }
 
 };
 

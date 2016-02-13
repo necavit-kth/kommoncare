@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 var challengeSchema = new Schema({
   description: String,
   category: Category.schema,
-  ownerId: String
+  ownerId: String,
+  state: String
 });
 
 // the schema is useless so far
