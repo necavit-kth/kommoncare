@@ -2,6 +2,7 @@ var express = require('express');
 var usersController = require('../controllers/users');
 var categoriesController = require('../controllers/categories');
 var challengesController = require('../controllers/challenges');
+var awardsController = require('../controllers/awards');
 
 module.exports = function () {
   var router = express.Router();
@@ -21,6 +22,9 @@ module.exports = function () {
   router.get('/challenges/:id', challengesController.getChallenge);
   router.delete('/challenges/:id', challengesController.deleteChallenge);
   router.post('/challenges/:id/action/:action', challengesController.applyActionToChallenge);
+
+  router.get('/awards', awardsController.getAwards);
+  router.post('/awards', awardsController.createAward);
 
   return router;
 };

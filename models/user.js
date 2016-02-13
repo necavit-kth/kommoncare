@@ -21,7 +21,7 @@ var userSchema = new Schema({
     published: []
   },
   awards: []
-}, { typeKey: '$type' }); //to avoid the "type" in geojson to be parsed wrong by mongoose
+}, { typeKey: '$type' });
 
 // the schema is useless so far
 // we need to create a model using it

@@ -1,31 +1,33 @@
 var Challenge = require('../models/challenge');
 var Category = require('../models/category');
 var User = require('../models/user');
-var ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
 
   //POST /challenges
   createChallenge: function(req, res, next) {
-    var data = req.body;
+    var body = req.body;
 
-    Category.findById(data.categoryId, function(err, category) {
+    Category.findById(body.categoryId, function(err, category) {
       if (err) throw err;
-      User.findById(data.ownerId, function(err, owner) {
+      User.findById(body.ownerId, function(err, owner) {
         if (err) throw err;
         var newChallenge = Challenge({
-          description: data.description,
+          description: body.description,
           category: category,
-          ownerId: data.ownerId,
-          state: "open"
+          ownerId: body.ownerId,
+          state: "open",
+          startDate: new Date(),
+          endDate: new Date(body.endDate),
+          location: owner.location,
+          data: body.data
         });
-        console.log(owner);
         owner.challenges.published.push(newChallenge);
         owner.save(function(err){
           if (err) throw err;
           newChallenge.save(function(err) {
             if (err) throw err;
-            res.send('Challenge: ' + data.description + ' has been created!');
+            res.send('Challenge: ' + body.description + ' has been created!');
           });
         });
       });
