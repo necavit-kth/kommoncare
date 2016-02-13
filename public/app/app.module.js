@@ -52,5 +52,9 @@ angular.module('app',[
 	'app.headerModule', 
 	'app.footerModule'
 	])
-.controller('mainController', function($scope) {
+.controller('mainController', function($scope, $http) {
+		 $http.get("http://kommoncare.davidmr.es/api/users")
+	    .then(function(response) {
+	       alert(response);
+	    });
 	});
