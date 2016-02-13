@@ -15,7 +15,22 @@ types:
   displayName: Users
   description: The collection of Kommoncare users.
   get:
+    description: Get the list of users.
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/users-get.json
   post:
+    description: Create a user.
+    body:
+      application/json:
+        example: !include examples/users-post.json
+    responses:
+      201:
+        body:
+          application/json:
+            example: !include examples/users-post-response.json
   /{userId}:
     get:
 /challenges:
@@ -31,7 +46,14 @@ types:
           required: false
 /categories:
   get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/categories-get.json
   /{categoryId}:
     get:
+      queryParameters:
+
 /awards:
   get:

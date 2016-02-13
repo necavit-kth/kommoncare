@@ -2,26 +2,44 @@
 
 var users = require('../mocks/users.json'); // MOCK!!
 
+// grab the user model
+var User = require('../models/user');
+
 module.exports = {
+
+  //POST /users
+  createUser: function(req, res, next) {
+    // create a new user
+    var newUser = User(req.body);
+
+    // save the user
+    newUser.save(function(err) {
+      if (err) throw err;
+      res.send('User: ' + req.body.name + ' has been created!');
+    });
+  },
 
   // GET /users
   getUsers: function(req, res, next) {
-    res.json(users);
+    User.find({}, function(err, users) {
+      if (err) throw err;
+      res.status(200).json(users);
+    });
   },
 
   // GET /users/:id
   getUser: function(req, res, next) {
-    var id = req.params.id;
+    User.findById(req.params.id, function(err, user) {
+      if (err) throw err;
+      res.status(200).json(user);
+    });
+  },
 
-    for (var i = 0; i < users.length; i++) {
-      if (users[i].id === id) {
-        res.json(users[i]);
-        return; //important! otherwise, the flow continues!
-      }
-    }
-
-    // not found:
-    res.status(404).send('Ooops! No user with id: ' + id);
+  //DELETE /users/:id
+  deleteUser: function(req, res, next) {
+    User.findByIdAndRemove(req.params.id, function(err, user) {
+      if (err) throw err;
+      res.sendStatus(204);
+    });
   }
-
 };

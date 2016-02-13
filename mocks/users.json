@@ -2,7 +2,6 @@
   {
     "id": "userJohnFooBar1234id",
     "name": "John Doe",
-    "email": "john.doe@kth.se",
     "type": "player",
     "challenges": {
       "active": [
