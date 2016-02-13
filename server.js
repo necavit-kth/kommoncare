@@ -32,13 +32,15 @@ db.once('open', function() {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+
 // API routing
 var apiRouter = require('./routes/api');
 app.use('/api', apiRouter());
 
 // Angular app main file
 app.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname + '/views/app.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // Error handling
