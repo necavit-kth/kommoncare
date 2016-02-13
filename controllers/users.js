@@ -9,18 +9,13 @@ module.exports = {
 
   //POST /users
   createUser: function(req, res, next) {
-    console.log(req.body);
-
     // create a new user
     var newUser = User(req.body);
 
     // save the user
     newUser.save(function(err) {
-      if (err) {
-        console.log(err);
-        throw err;
-      }
-      res.send("<h1>User created!!</h1>");
+      if (err) throw err;
+      res.send('User: ' + req.body.name + ' has been created!');
     });
   },
 
@@ -28,26 +23,23 @@ module.exports = {
   getUsers: function(req, res, next) {
     User.find({}, function(err, users) {
       if (err) throw err;
-
-      // object of all the users
-      console.log(users);
-      res.json(users);
+      res.status(200).json(users);
     });
   },
 
   // GET /users/:id
   getUser: function(req, res, next) {
-    var id = req.params.id;
+    User.findById(req.params.id, function(err, user) {
+      if (err) throw err;
+      res.status(200).json(user);
+    });
+  },
 
-    for (var i = 0; i < users.length; i++) {
-      if (users[i].id === id) {
-        res.json(users[i]);
-        return; //important! otherwise, the flow continues!
-      }
-    }
-
-    // not found:
-    res.status(404).send('Ooops! No user with id: ' + id);
+  //DELETE /users/:id
+  deleteUser: function(req, res, next) {
+    User.findByIdAndRemove(req.params.id, function(err, user) {
+      if (err) throw err;
+      res.sendStatus(204);
+    });
   }
-
 };

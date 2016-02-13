@@ -4,14 +4,24 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
+var fs = require('fs');
+var config = require('./config/config');
 
-mongoose.connect('mongodb://necavit:kommon1692@ds055875.mongolab.com:55875/kommoncaredb');
-//mongoose.connect('mongodb://localhost/kommoncare');
+// redirect stdout / stderr
+if (process.env.NODE_ENV == 'production') {
+  var access = fs.createWriteStream(path.join(__dirname + '/access.log'), { flags: 'a' }),
+      error = fs.createWriteStream(path.join(__dirname + '/error.log'), { flags: 'a' });
+  process.stdout.pipe(access);
+  process.stderr.pipe(error);
+}
+
+var mongooseUri = config.mongodb.url;
+mongoose.connect(mongooseUri);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
-  console.log('YAAAY');
+  console.log('Connected to MongoDB!');
 });
 
 // configure app to use bodyParser()
@@ -26,6 +36,12 @@ app.use('/api', apiRouter());
 // Angular app main file
 app.get('/', function(req, res, next){
   res.sendFile(path.join(__dirname + '/views/app.html'));
+});
+
+// Error handling
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 // START THE SERVER
