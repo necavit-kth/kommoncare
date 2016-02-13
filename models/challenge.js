@@ -8,8 +8,17 @@ var challengeSchema = new Schema({
   category: Category.schema,
   ownerId: String,
   lockerId:String,
-  state: String
-});
+  state: String,
+  location: {
+    address: String,
+    geojson: {
+      type: String,
+      coordinates: [Number]
+    }
+  },
+  startDate: Date,
+  endDate: Date
+}, { typeKey: '$type' });
 
 // the schema is useless so far
 // we need to create a model using it

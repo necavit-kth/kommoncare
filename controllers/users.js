@@ -1,8 +1,3 @@
-//TODO var User = require('../models/user');
-
-var users = require('../mocks/users.json'); // MOCK!!
-
-// grab the user model
 var User = require('../models/user');
 
 module.exports = {

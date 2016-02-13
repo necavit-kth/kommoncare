@@ -1,7 +1,6 @@
 var Challenge = require('../models/challenge');
 var Category = require('../models/category');
 var User = require('../models/user');
-var ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
 
@@ -17,9 +16,11 @@ module.exports = {
           description: data.description,
           category: category,
           ownerId: data.ownerId,
-          state: "open"
+          state: "open",
+          startDate: new Date(),
+          endDate: new Date(data.endDate),
+          location: owner.location
         });
-        console.log(owner);
         owner.challenges.published.push(newChallenge);
         owner.save(function(err){
           if (err) throw err;
