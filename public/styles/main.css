@@ -1,3 +1,78 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+.donut-chart svg {
+	pointer-events: none;
+}
+.donut-chart svg path {
+	fill: none;
+	stroke-width: 20px;
+	stroke: #8CFFCF;
+  
+}
+			
+.donut-chart {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	display: inline-block;
+}
+.donut-chart p {
+	margin: 0;
+	position: absolute;
+	top: 35%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.5em;
+}
+.donut-chart span {
+	display: block;
+	font-size: 0.5em;
+}
+
+
+/* Just for the purpose of this pen */
+body {
+	text-align: center;
+  font-family: 'Open Sans'
+}
+.red svg path {
+  stroke: #DDE9FF;
+}
+.green svg path {
+  stroke: #FF534E;
+}
+
+.anim {
+
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
 
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe2aa+0,229e95+42,0c3a39+100 */
@@ -109,6 +184,9 @@ background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%) fix
 	border-radius: 0px;
 	text-align: center;
 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+
 }
 
 
@@ -125,6 +203,9 @@ background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%) fix
 	
 	border-radius: 0px;
 	height: 40%;
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
 
 
@@ -152,6 +233,9 @@ background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%) fix
 	
 	display: block;
 	position: relative;
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 	
 	
 }
@@ -200,6 +284,9 @@ border-radius: 0px;
 background-color: #faf9eb;
 border: 0px;
 
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+
 }
 
 .col-mainbutton {
@@ -215,6 +302,16 @@ border: 0px;
 
 	margin-top: 10px;
 	padding-left: 10px;
+
+
+
+
+}
+
+.glyphicon a {
+
+	text-decoration: none;
+
 
 
 
@@ -378,4 +475,39 @@ hr {
 .glyphicon-minus-sign {
 
 	color: #FF700E;
+}
+
+
+.stats-col{
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    
+  
+    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 300px;
+    background: rgba(79, 204, 106, 0.9);
+
+
+
+}
+
+.stats-col h1{
+
+	padding-top: 20px;
+	opacity: 0.5;
+
+	
+
+}
+
+
+.statsglyph-custom {
+
+
+	font-size: 600%;
+	float: right;
+	padding-top: 80px;
 }
