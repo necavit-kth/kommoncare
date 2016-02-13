@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+  <meta charset="UTF-8">
+  </head>
+  <body ng-controller="mainController">
+ 
+    <header></header>
+
+    <div id="main">
+        <div ng-view></div>
+    </div>
+
+ 
+    <footer></footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+
+    <!--Home-->
+    <script src="app/components/home/homeController.js"></script>
+    
+    <!--Challenge-->
+    <script src="app/components/challenge/createChallenge/createChallengeController.js"></script>
+    <script src="app/components/challenge/challengeView/challengeViewController.js"></script>
+    <script src="app/components/challenge/challengeList/challengeListController.js"></script>
+
+    <!--User-->
+    <script src="app/components/user/profile/profileViewController.js"></script>
+    <script src="app/components/user/challengeHistory/challengeHistoryController.js"></script>
+
+    <!--Game-->
+    <script src="app/components/user/game/achievements/achievementListController.js"></script>
+    <script src="app/components/user/game/leaderboard/leaderBoardController.js"></script>
+
+    <!--Directives-->
+    <script src="app/shared/header/headerDirective.js"></script>
+    <script src="app/shared/footer/footerDirective.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routing.js"></script>
+
+
+  </body>
+
+ 
+
+
+</html>
+

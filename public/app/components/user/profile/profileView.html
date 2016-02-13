@@ -1,0 +1,19 @@
+<div>
+	<h1>Profile</h1>
+	<ul>
+		<li>Name: <span>{{user.name}}</span> </li>
+		<li>Phone number: <span>{{user.phoneNumber}}</span> </li>
+		<li>Has pets: <span>{{user.hasPets}}</span> </li>
+		<li>Allergies: 
+			<ul>
+				<li ng-repeat="allergy in user.allergies">
+ 				<span>{{allergy}}</span>
+ 				</li>
+			</ul>
+		</li>
+		<li>Address: <span>{{user.location.address}}</span></li>
+	</ul>
+	<a href="#/user/challengeHistory">challengeHistory</a>
+	<a href="#/user/game/leaderboard">leaderboard</a>
+	<a href="#/user/game/achievements">achievements</a>
+</div>
