@@ -18,6 +18,6 @@ angular.module('app',[
 		id = "56be644c2c73f39864399e60";
 		$http.get("http://kommoncare.davidmr.es/api/users/" +id)
 	    .then(function(response) {
-	    	loggedInUser = response;
+	    	loggedInUser = response.data;
 	    });
 	});
