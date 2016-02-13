@@ -1,19 +1,146 @@
-<div>
-	<h1>Profile</h1>
-	<ul>
-		<li>Name: <span>{{user.name}}</span> </li>
-		<li>Phone number: <span>{{user.phoneNumber}}</span> </li>
-		<li>Has pets: <span>{{user.hasPets}}</span> </li>
-		<li>Allergies: 
-			<ul>
-				<li ng-repeat="allergy in user.allergies">
- 				<span>{{allergy}}</span>
- 				</li>
-			</ul>
-		</li>
-		<li>Address: <span>{{user.location.address}}</span></li>
-	</ul>
-	<a href="#/user/challengeHistory">challengeHistory</a>
-	<a href="#/user/game/leaderboard">leaderboard</a>
-	<a href="#/user/game/achievements">achievements</a>
+
+<div class="container-fluid jumbocontainer">
+    <div class="row">
+      <div class="col-xs-12 col-custom">
+
+         <div class="jumbotron-3"> 
+          
+        	<div class="col-xs-4">
+          <h1 id="ChallengeName" class="profileView">Challenge details</h1> 
+
+          </div>
+
+          
+          <div class="col-xs-8">
+          <div class="glyphicon glyphicon-ok glyphicon-profile "></div> 
+      </div>
+
+           
+
+      </div>
+
+    </div>
+
+      </div>
+
+    </div>
+
+  <div class="container-fluid">
+    <div class="row">
+  
+
+        <div class="col-xs-12 center-block profile">
+
+
+			  <div>
+				
+
+				<ul class="list-group">
+
+
+					<li class="list-group-item profile-list">
+
+
+						<div class="input-group">
+					        <span class="input-group-btn">
+					            <button class="btn btn-default" type="button">Address</button>
+					        </span>
+					        <input type="text" class="form-control" value="{{user.location.address}}">
+					    </div><!-- /input-group -->
+
+
+					</li>
+
+
+					<li class="list-group-item profile-list">
+
+						<div class="input-group">
+					        <span class="input-group-btn">
+					            <button class="btn btn-default" type="button">Name</button>
+					        </span>
+					        <input type="text" class="form-control" value="{{user.name}}">
+					    </div><!-- /input-group -->
+
+
+
+
+					 </li>
+					<li class="list-group-item profile-list">
+
+
+
+						<div class="input-group">
+					        <span class="input-group-btn">
+					            <button class="btn btn-default" type="button">Phone</button>
+					        </span>
+					        <input type="text" class="form-control" value="{{user.phoneNumber}}">
+					    </div><!-- /input-group -->
+
+
+
+
+
+
+					</li>
+					
+
+					<li class="list-group-item profile-list">
+
+
+						<div class="input-group">
+
+
+					        <span class="input-group-addon">
+					        	<input type="checkbox" aria-label="Pets">
+					      	</span>
+					        <input type="text" class="form-control" value="{{user.hasPets}}">
+					    </div><!-- /input-group -->
+
+
+
+
+					 </li>
+					
+
+					<li class="list-group-item profile-list">
+						<h4>Allergies:</h4> 
+						<ul>
+							<li class="list-group-item" ng-repeat="allergy in user.allergies">
+
+
+								<div class="input-group">
+							        
+							        <input type="text" class="form-control" value="{{allergy}}">
+							    </div><!-- /input-group -->
+
+
+
+
+			 				
+			 				</li >
+						</ul>
+					</li>
+
+				</ul>
+				<a href="#/user/challengeHistory">challengeHistory</a>
+				<a href="#/user/game/leaderboard">leaderboard</a>
+				<a href="#/user/game/achievements">achievements</a>
+			</div> 
+            
+        </div>
+      </div>
+   
+   
+    </div>
+
+  </div>
+  
+
+
+
 </div>
+	
+
+
+
+

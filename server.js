@@ -35,8 +35,10 @@ app.use('/api', apiRouter());
 
 // Angular app main file
 app.get('/', function(req, res, next){
-  res.sendFile(path.join(__dirname + '/views/app.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
+
+app.use(express.static("public"));
 
 // Error handling
 app.use(function(err, req, res, next) {

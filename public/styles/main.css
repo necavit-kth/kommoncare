@@ -1,0 +1,334 @@
+body {
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe2aa+0,229e95+42,0c3a39+100 */
+background: #ffe2aa; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffe2aa 0%, #229e95 42%, #0c3a39 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffe2aa 0%,#229e95 42%,#0c3a39 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffe2aa 0%,#229e95 42%,#0c3a39 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe2aa', endColorstr='#0c3a39',GradientType=0 ); /* IE6-9 */
+background-repeat: no-repeat;
+/*background: linear-gradient(to top, #ffe2aa 0%, #229e95 42%, #0c3a39 100%) fixed;
+background: linear-gradient(to bottom,  #ffe2aa 0%,#229e95 42%,#0c3a39 100%) fixed;
+
+
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe2aa+0,2ccc4f+42,0c3a39+100 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe2aa+0,4fcc6a+42,0c3a39+100 */
+background: #ffe2aa; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffe2aa 0%, #4fcc6a 42%, #0c3a39 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe2aa', endColorstr='#0c3a39',GradientType=0 ); /* IE6-9 */
+
+
+background: linear-gradient(to top, #ffe2aa 0%, #4fcc6a 42%, #0c3a39 100%) fixed;
+background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%) fixed;
+
+
+	
+}
+
+.navbar-custom {
+    background: #FCFFFE;
+	background-image: none;
+	border:none;
+	color: #fff;
+	letter-spacing: 1px;
+	font-weight: 600;
+	text-decoration: none ! important;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out 0s;		
+	-webkit-transition: all 0.3s ease-in-out 0s;	
+	height: 100px;
+	padding: 30px;
+	opacity: 0.8;
+}
+
+
+.navbar-custom-bottom{
+
+	background-color: #faf9eb;
+
+	background-image: none;
+	color: #fff;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out 0s;		
+	-webkit-transition: all 0.3s ease-in-out 0s;	
+
+}
+.btn-color {
+
+	background-image:none
+}
+
+.navbar-header a {
+
+
+	color: white;
+	
+}
+
+.col-custom{
+
+
+	
+	
+	
+	
+}
+.thumbnail img {
+
+	max-height: 100%;
+	height: 180px;
+	padding: 10px;
+	width: 100%;
+
+}
+
+.navbar-brand {
+
+	font-family: Kaushan Script;
+	text-transform: none;
+	font-size: 300%;
+	text-align: center;
+	color: black;
+	
+	
+}
+
+.jumbotron {
+
+
+
+	background-color: #faf9eb;
+	
+	color: #8d8d7f;
+	font-family: Helvetica;
+	opacity: 1;
+	border-radius: 0px;
+	text-align: center;
+
+}
+
+
+.jumbotron-2 {
+
+
+
+	background-color: #faf9eb;
+	
+	color: #8d8d7f;
+	font-family: Helvetica;
+	opacity: 1;
+	border-radius: 0;
+	
+	border-radius: 0px;
+	height: 40%;
+}
+
+
+
+.jumbotron-3 {
+
+
+	background-color: #faf9eb;
+	background: url('/images/jumboheader2.jpg') no-repeat center center;
+	background-size: cover;
+	filter: alpha(Opacity=90);
+	
+	
+	color: black;
+	font-family: Helvetica;
+	
+	border-radius: 0;
+	width: 100%;
+	
+	
+	height: 200px;
+	padding: 0;
+	margin: 0px;
+	text-align: center;
+	
+	display: block;
+	position: relative;
+	
+	
+}
+
+
+
+
+.jumbotron-3 h1 {
+
+	margin: 10px;
+	padding: 20px;
+	float: left;
+	opacity: 0.5;
+}
+
+.jumbocontainer {
+
+
+	width: 100%;
+}
+
+.btn-custom {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe2aa+0,0c3a39+100 */
+
+	background: linear-gradient(to top, #ffe2aa 0%, #4fcc6a 42%, #0c3a39 100%) fixed;
+	background: linear-gradient(to bottom,  #ffe2aa 0%,#4fcc6a 42%,#0c3a39 100%) fixed;
+	border-radius: 0;
+	border: 0;
+	
+	
+	
+	
+
+
+
+}
+
+.btn.sharp {
+  border-radius:0;
+}
+
+.thumbnail {
+
+margin: 3px;
+border-radius: 0px;
+background-color: #faf9eb;
+border: 0px;
+
+}
+
+.col-mainbutton {
+
+	opacity: 1;
+
+}
+
+.glyphicon {
+
+	font-size: 200%;
+	color: #8d8d7f;
+
+	margin-top: 10px;
+	padding-left: 10px;
+
+
+
+
+}
+
+.glyphcol {
+
+	margin-left: 10px;
+
+}
+
+.datWhiteClass {
+
+
+
+}
+
+.profile {
+
+	height: 100%;
+	background-color: #faf9eb;
+	margin-top: 10px;
+	opacity: 1;
+
+
+}
+
+.profile-list {
+
+	background-color: none;
+	background: none;
+	border: none;
+
+
+}
+
+.glyphicon-profile {
+
+	font-size: 800%;
+	text-align: bottom;
+	
+	
+	color:#faf9eb ;
+	opacity: 0.9;
+	float: right;
+	margin-top: 87px;
+
+
+
+
+
+}
+
+.profile-list h4 {
+
+opacity: 0.5;
+
+}
+
+.list-challenges {
+
+	margin: 20px;
+
+}
+
+.list-challenges a {
+
+	margin: 5px;
+
+}
+
+.list-challenges ul {
+
+	border: 0;
+	background-color: #faf9eb;
+
+}
+
+.nav-tab-custom {
+
+	
+	height: 30px;
+	background: white;
+	border-radius: 0;
+	padding: 10px;
+}
+
+.dropdown {
+
+
+	padding: 30px;
+}
+
+.active {
+
+color: #4fcc6a;
+
+}
+
+#ChallengeAccepted {
+
+
+	
+}
+
+#ChallengeAvailable {
+
+	color: #4fcc6a;
+	
+}
+
+
+label {
+
+	text-align: center;
+}
