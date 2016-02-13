@@ -1,6 +1,6 @@
 var Challenge = require('../models/challenge');
 var Category = require('../models/category');
-var User = require('../models/category');
+var User = require('../models/user');
 
 module.exports = {
 
@@ -18,6 +18,7 @@ module.exports = {
           ownerId: data.ownerId,
           state: "open"
         });
+        console.log(owner);
         owner.challenges.published.push(newChallenge);
         owner.save(function(err){
           if (err) throw err;

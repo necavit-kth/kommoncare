@@ -6,15 +6,18 @@ var path = require('path');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var config = require('./config/config');
+var morgan = require('morgan');
 
-// redirect stdout / stderr
+// morgan logger
 if (process.env.NODE_ENV == 'production') {
-  var access = fs.createWriteStream(path.join(__dirname + '/access.log'), { flags: 'a' }),
-      error = fs.createWriteStream(path.join(__dirname + '/error.log'), { flags: 'a' });
-  process.stdout.pipe(access);
-  process.stderr.pipe(error);
+  var accessLogStream = fs.createWriteStream(__dirname + '/access.log',{flags: 'a'});
+  app.use(morgan('combined', {stream: accessLogStream}));
+}
+else if (process.env.NODE_ENV == 'development') {
+  app.use(morgan('combined'));
 }
 
+// mongooose connection
 var mongooseUri = config.mongodb.url;
 mongoose.connect(mongooseUri);
 var db = mongoose.connection;
