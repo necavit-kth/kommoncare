@@ -1,6 +1,16 @@
 var Challenge = require('../models/challenge');
 var Category = require('../models/category');
 var User = require('../models/user');
+var Award = require('../models/award');
+
+function awardUser(user) {
+  Award.find({},function (err, awards){
+    if (err) throw err;
+    for (var i = 0; i < awards.length; i++) {
+      //TODO
+    }
+  });
+}
 
 module.exports = {
 
@@ -127,9 +137,9 @@ module.exports = {
                     }
                   }
                   locker.challenges.completed.push(challenge);
+                  //TODO awardUser(locker); // add awards as needed
                   locker.save(function(err){
                     if (err) throw err;
-                    //TODO add awards thing!
                     res.sendStatus(200);
                   });
                 });
