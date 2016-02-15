@@ -26,7 +26,7 @@ angular.module('app')
           	templateUrl: 'app/components/challenge/challengeList/challengeListView.html',
           	controller: 'challengeListController'
           })
-		    .when('/challenge/challengeView', {
+		    .when('/challenge/challengeView/:id?', {
           	templateUrl: 'app/components/challenge/challengeView/challengeView.html',
           	controller: 'challengeViewController'
           })

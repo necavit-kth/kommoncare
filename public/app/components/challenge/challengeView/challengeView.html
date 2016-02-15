@@ -11,9 +11,9 @@
 			      	 <div class="row">
 		      	<div class="col-xs-12">
 
-		      		<a class="glyphicon glyphicon-remove-circle pull-right glyphicon-controls  "></a> 
-		      		<span><a class="glyphicon glyphicon-plus-sign pull-right glyphicon-controls success active "></a> </span>
-		      		<span><a class="glyphicon glyphicon-minus-sign glyphicon-controls pull-right "></a> </span>
+		      		<a href="#" class="glyphicon glyphicon-remove-circle pull-right glyphicon-controls  "></a> 
+		      		<span><a href="#" class="glyphicon glyphicon-ok pull-right glyphicon-controls success active "></a> </span>
+		      		<span><a href="#" class="glyphicon glyphicon-minus-sign glyphicon-controls pull-right "></a> </span>
 
 
 
@@ -57,7 +57,7 @@
         			<div class="panel panel-default panel-custom">
 
         				<div class="panel-heading center-block">
-        					<h3>Some groceries</h3>
+        					<h3>{{challenge.category}}</h3>
 
         				</div>
         				
@@ -70,24 +70,16 @@
 						    	<tr>
 						    		<td>Shopping</td>
 						    		<td>2.3km</td>
-						    		<td>12/03/15 - 15:25</td>
-						    		
-
+						    		<td>{{challenge.endDate | date:'MM/dd/yyyy'}}</td>
 						    	</tr>
-
 						    	</tbody>
-						    	
-
-
-
-
 						    </table>
 
 
         				</div>
         			<div class="panel-footer">
 
-        				Please buy local cranberries!
+        				{{challenge.description}}
 
         				</div>
 
@@ -102,42 +94,12 @@
         		<div class="col-md-6">
 
 					    <ul class="list-group">
-						  <li class="list-group-item">
-						    <span class="badge">2</span>
-						    Eggs
+						  <li class="list-group-item" ng-repeat="item in challenge.data">
+						    <span class="badge">{{item.quantity}}</span>
+						    {{item.name}}
 						  </li>
-
-
-
-
-						  <li class="list-group-item">
-						    <span class="badge">500ml</span>
-						    Olive oil
-						  </li>
-
-
-						  <li class="list-group-item">
-						    <span class="badge">200g</span>
-						    Cranberries
-						  </li>
-
-						  <li class="list-group-item">
-						    <span class="badge">1L</span>
-						    Juice
-						  </li>
-
-						  <li class="list-group-item">
-						    <span class="badge">3</span>
-						    Sausages
-						  </li>
-
-
-
 						</ul>
-
 					</div>
-
-
 					<div class="col-md-6">
 
 						<a href="#" class="glyphicon glyphicon-plus pull-right active">
@@ -145,13 +107,7 @@
 
 						</a>
 
-						<br>
-						<br>
-						<br>
-
-						<hr>
-						<hr>
-						<hr>
+						
 					
 			
 			</div> 
