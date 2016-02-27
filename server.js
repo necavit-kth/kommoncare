@@ -52,6 +52,6 @@ app.use(function(err, req, res, next) {
 });
 
 // START THE SERVER
-var port = process.env.PORT || 8080; // set our port
+var port = process.env.PORT; // set our port
 app.listen(port);
 console.log('Magic happens on port ' + port);
